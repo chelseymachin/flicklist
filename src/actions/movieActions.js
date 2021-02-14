@@ -138,6 +138,41 @@ const sortMoviesBy = (item, type) => async(dispatch) => {
         dispatch({
             type: MOVIES_SORT_FAIL,
             payload: error.message
-        })
+        });
     }
-}
+};
+
+const getMostPopular = () => async(dispatch) => {
+  try {
+    dispatch({
+      type: MOVIES_SORT_REQUEST
+    });
+    const data = await sanityAPI.fetch(
+      `*[_type == 'movie']{
+        _id,
+        "overview": {
+          "text": overview[0].children[0].text
+        },
+        "poster" : poster.asset->URL,
+        title
+      }| ondragover(popularity desc) [0..2]`
+    );
+    dispatch({
+      type: MOVIES_MOST_POPULAR_SUCCESS,
+      payload: data
+    });
+  } catch (error) {
+    dispatch({
+      type: MOVIES_MOST_POPULAR_FAIL,
+      payload: error.message
+    });
+  }
+};
+
+export {
+  fetchAllMovies,
+  fetchMovieByID,
+  sortMoviesBy,
+  getMostPopular,
+  fetchMoviesByRef
+};
