@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import { GlobalStyle } from "./styles/globalStyles"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 import './App.css';
-
-function App() {
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import MoviesList from "./pages/MoviesListPage"
+import PersonsList from "./pages/PersonsListPage"
+import Movie from "./pages/MoviePage"
+import Person from "./pages/PersonPage"
+import {useSelector} from "react-redux"
+import {ThemeProvider} from "styled-components"
+  
+function App() { 
+  const {theme} = useSelector(state => state.toggleTheme)
+  
+  let Theme = theme ? theme : {}
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          I am still working, y'all!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={Theme} >
+      <Router>
+        <GlobalStyle />
+        <div className="contentwrap">
+        <Header />
+        <Switch>
+            <Route path="/movie/">
+              <Movie />
+            </Route>
+            <Route path="/person/">
+              <Person />
+            </Route>
+            <Route path="/persons/">
+              <PersonsList />
+            </Route>
+            <Route path="/" exact>
+              <MoviesList />
+            </Route>
+        </Switch>
+        </div>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
