@@ -115,3 +115,29 @@ const fetchMovieByID = (id) => async(dispatch) => {
         })
     }
 }
+
+const sortMoviesBy = (item, type) => async(dispatch) => {
+    try {
+        dispatch({
+            type: MOVIES_MOST_POPULAR_REQUEST
+        })
+
+        const data = await sanityAPI.fetch(
+            `*[_type == 'movie]{
+                _id,
+                "poster" : poster.asset->url,
+                title
+                } | order( ${item} ${type})`
+        )
+
+        dispatch({
+            type: MOVIES_SORT_SUCCESS,
+            payload: data
+        })
+    } catch (error) {
+        dispatch({
+            type: MOVIES_SORT_FAIL,
+            payload: error.message
+        })
+    }
+}
