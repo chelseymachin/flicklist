@@ -1,4 +1,4 @@
-import sanityAPI from "../../client.js";
+import sanityAPI from "../client.js";
 import {
   MOVIES_FETCH_FAIL,
   MOVIES_FETCH_REQUEST,
@@ -54,5 +54,3 @@ const fetchMoviesByRef = (ref) => async (dispatch) => {
       });
     }
   };
-
-const fetchMovieByID = ()
