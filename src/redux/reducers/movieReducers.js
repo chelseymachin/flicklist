@@ -40,5 +40,91 @@ import {
      }
  };
 
- 
+ const fetchMoviesByRefReducer = (state = {}, action) => {
+    switch (action.type) {
+      case MOVIES_REF_FETCH_REQUEST:
+        return {
+          loading: true
+        };
+      case MOVIES_REF_FETCH_SUCCESS:
+        return {
+          loading: false,
+          movies: action.payload
+        };
+      case MOVIES_REF_FETCH_FAIL:
+        return {
+          loading: false,
+          error: action.payload
+        };
+      default:
+        return state;
+    }
+  };
+  const fetchMovieByIdReducer = (state = {}, action) => {
+    switch (action.type) {
+      case MOVIE_FETCH_REQUEST:
+        return {
+          loading: true
+        };
+      case MOVIE_FETCH_SUCCESS:
+        return {
+          loading: false,
+          movie: action.payload
+        };
+      case MOVIE_FETCH_FAIL:
+        return {
+          loading: false,
+          error: action.payload
+        };
+      default:
+        return state;
+    }
+  };
+  const sortMoviesByReducer = (state = {}, action) => {
+    switch (action.type) {
+      case MOVIES_SORT_REQUEST:
+        return {
+          loading: true
+        };
+      case MOVIES_SORT_SUCCESS:
+        return {
+          loading: false,
+          movies: action.payload
+        };
+      case MOVIES_SORT_FAIL:
+        return {
+          loading: false,
+          error: action.payload
+        };
+      default:
+        return state;
+    }
+  };
+  const getMostPopularReducer = (state = {}, action) => {
+    switch (action.type) {
+      case MOVIES_MOST_POPULAR_REQUEST:
+        return {
+          loading: true
+        };
+      case MOVIES_MOST_POPULAR_SUCCESS:
+        return {
+          loading: false,
+          movies: action.payload
+        };
+      case MOVIES_MOST_POPULAR_FAIL:
+        return {
+          loading: false,
+          error: action.payload
+        };
+      default:
+        return state;
+    }
+  };
+  export {
+    fetchAllMoviesReducer,
+    fetchMovieByIdReducer,
+    sortMoviesByReducer,
+    getMostPopularReducer,
+    fetchMoviesByRefReducer
+  };
 
