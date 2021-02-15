@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react'
 import {MovieContainer} from "../styles/movieStyles"
 import {useDispatch, useSelector} from "react-redux"
-import {fetchMovieById} from "../redux/actions/movieActions"
+import {fetchMovieByID} from "../redux/actions/movieActions"
 import {useLocation, Link} from "react-router-dom"
 import queryString from "query-string"
-import Loader from "../components/BackdropLoader"
+import Loader from "../components/backdropLoader"
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import {avatarUrl} from "../styles/definition"
@@ -15,7 +15,7 @@ const MoviePage = () => {
     const {id} = queryString.parse(location.search)
     
     useEffect(()=>{                
-        dispatch(fetchMovieById(id))        
+        dispatch(fetchMovieByID(id))        
     }, [dispatch, id])
     
     const {loading, error, movie} = useSelector(state => state.fetchMovieByIdReducer)    

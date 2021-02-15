@@ -1,12 +1,12 @@
 import { GlobalStyle } from "./styles/globalStyles"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./components/header"
+import Footer from "./components/footer"
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import MoviesList from "./pages/MoviesListPage"
-import PersonsList from "./pages/PersonsListPage"
-import Movie from "./pages/MoviePage"
-import Person from "./pages/PersonPage"
+import MoviesList from "./pages/moviesListPage"
+import PersonsList from "./pages/personsListPage"
+import Movie from "./pages/moviePage"
+import Person from "./pages/personPage"
 import {useSelector} from "react-redux"
 import {ThemeProvider} from "styled-components"
   

@@ -6,7 +6,7 @@ import {useLocation, Link} from "react-router-dom"
 import queryString from "query-string"
 import {PersonContainer} from "../styles/personStyle"
 import UpdateIcon from '@material-ui/icons/Update';
-import Loader from "../components/BackdropLoader"
+import Loader from "../components/backdropLoader"
 import {avatarUrl} from "../styles/definition"
 
 const PersonPage = () => {

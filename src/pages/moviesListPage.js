@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {fetchAllMovies, getMostPopular, sortMoviesBy} from "../redux/actions/movieActions"
 import {useDispatch, useSelector} from "react-redux"
-import Loader from "../components/BackdropLoader"
+import Loader from "../components/backdropLoader"
 import {MovieListContainer} from "../styles/movieStyles.js"
 import SortIcon from '@material-ui/icons/Sort';
-import SortModal from "../components/Modal"
+import SortModal from "../components/modal"
 import {useLocation, Link} from "react-router-dom"
 import queryString from "query-string"
 import {MOVIES_FETCH_RESET} from "../redux/constants/movieConstants"

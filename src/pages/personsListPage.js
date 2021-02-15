@@ -5,9 +5,9 @@ import {fetchAllPersons,
 import {fetchMoviesByRef} from "../redux/actions/movieActions"
 import {useSelector, useDispatch} from "react-redux"
 import {PersonsListContainer} from "../styles/personStyle"
-import Loader from "../components/BackdropLoader"
+import Loader from "../components/backdropLoader"
 import {Link} from "react-router-dom"
-import Paginate from "../components/Paginate"
+import Paginate from "../components/paginate"
 import {avatarUrl} from "../styles/definition"
     
 const PersonsListPage = () => {
