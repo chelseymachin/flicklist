@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {deviceWidth, colors} from "./definition"
-import {MovieContainer} from "./MovieStyles"
+import {MovieContainer} from "./movieStyles"
 
 export const PersonsListContainer = styled.div`
     margin: 50px 80px;
