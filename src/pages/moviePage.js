@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
-import {MovieContainer} from "../styles/movieStyles"
+import {MovieContainer} from "../styles/movieStyles.js"
 import {useDispatch, useSelector} from "react-redux"
-import {fetchMovieByID} from "../redux/actions/movieActions"
+import {fetchMovieByID} from "../redux/actions/movieActions.js"
 import {useLocation, Link} from "react-router-dom"
 import queryString from "query-string"
-import Loader from "../components/backdropLoader"
+import Loader from "../components/backdropLoader.js"
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ScheduleIcon from '@material-ui/icons/Schedule';
-import {avatarUrl} from "../styles/definition"
+import {avatarUrl} from "../styles/definition.js"
 
 const MoviePage = () => {
     const location = useLocation()
