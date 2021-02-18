@@ -17,7 +17,7 @@ const MenuContent = ({setOpen}) => {
             </Link>
             <Link to="/persons"
                 onClick={() => setOpen(false)}> 
-                <RecentActorsIcon fontSize="large" /> Stars
+                <RecentActorsIcon fontSize="large" /> Cast
             </Link>
             
             {/* <Link onClick={() => setOpen(false)}> <PersonAddIcon /> Producers</Link>
@@ -36,7 +36,7 @@ const Header = () => {
             <div className="header">
             
                 <Link to="/" onClick={() => setOpenMenu(false)}>
-                    <label>MovieList</label>
+                    <label>Flick List</label>
                 </Link>
                 
                 {
