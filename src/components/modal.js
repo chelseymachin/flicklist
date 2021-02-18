@@ -9,7 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import {useHistory} from "react-router-dom"
 import {useSelector} from "react-redux"
-import {colors} from "../styles/definition.js"
+import {colors} from "../styles/definition"
 
 const useStyles = makeStyles((theme) => ({
   modal: {
